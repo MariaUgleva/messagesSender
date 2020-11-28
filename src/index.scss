@@ -1,0 +1,308 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+.container {
+  font-family: "Roboto", sans-serif;
+  width: 800px;
+  margin: 0 auto;
+}
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+input,
+textarea {
+  &::placeholder {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    line-height: 30px;
+    opacity: 0.4;
+    font-weight: 300;
+  }
+  &:focus {
+    opacity: 1;
+    border: 2px solid rgba(69, 165, 255, 0.5);
+    border-radius: 5px;
+  }
+}
+.logo {
+  padding: 40px 0px 20px;
+}
+.form {
+  position: relative;
+  width: 100%;
+  padding: 30px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+  }
+  &__title {
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 400;
+  }
+  &__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  &__btn {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 18px;
+    background: linear-gradient(180deg, #45a6ff 0%, #0055fb 100%), #c4c4c4;
+    border-radius: 5px;
+    color: #ffffff;
+    &:hover {
+      background: linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 0.15),
+          rgba(255, 255, 255, 0.15)
+        ),
+        linear-gradient(180deg, #45a6ff 0%, #0055fb 100%), #c4c4c4;
+    }
+    &:active {
+      background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.15),
+          rgba(0, 0, 0, 0.15)
+        ),
+        linear-gradient(180deg, #45a6ff 0%, #0055fb 100%), #c4c4c4;
+    }
+    &:disabled {
+      background: linear-gradient(0deg, #c4c4c4, #c4c4c4),
+        linear-gradient(180deg, #45a6ff 0%, #0055fb 100%);
+    }
+  }
+  &__btn-attach {
+    position: relative;
+    padding-left: 19px;
+    padding-top: 10px;
+    color: #0055fb;
+    background: none;
+    z-index: 3;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 17px;
+      height: 17px;
+      top: 10px;
+      left: 0;
+      background-image: url("./img/clip.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+}
+.input {
+  &__box {
+    display: flex;
+    width: 50%;
+    padding-top: 20px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    label {
+      height: 20px;
+      font-size: 16px;
+      line-height: 20px;
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
+  &__field {
+    height: 40px;
+    padding-left: 10px;
+    font-size: 18px;
+    line-height: 30px;
+    color: rgb(0, 0, 0);
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    outline: none;
+  }
+  &__topic {
+    width: 100%;
+  }
+  &__letter {
+    height: 140px;
+    resize: none;
+    overflow: auto;
+  }
+}
+.topic {
+  width: 100%;
+}
+.letter {
+  width: 100%;
+  padding: 20px 0 10px;
+}
+#senderName,
+#recipientName {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+#senderEmail,
+#recipientEmail {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+input[type="file"] {
+  display: none;
+}
+.form__files {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.form__file {
+  position: relative;
+  display: flex;
+  min-width: 365px;
+  max-width: 50%;
+  height: 50px;
+  padding-left: 59px;
+  margin-bottom: 10px;
+  line-height: 50px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 34px;
+    left: 10px;
+    height: 30px;
+    top: 10px;
+    background-image: url("./img/clipBig.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  &-delete {
+    position: relative;
+    padding-left: 18px;
+    margin-right: 15px;
+    font-size: 16px;
+    line-height: 20px;
+    background: none;
+    color: #ff6666;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 13px;
+      height: 16px;
+      left: 0;
+      top: 0;
+      background-image: url("./img/trash.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+}
+div[hidden] {
+  display: none;
+}
+.error__message {
+  font-size: 16px;
+  line-height: 25px;
+  color: #ff6666;
+}
+.messages {
+  padding-bottom: 50px;
+  &__title {
+    padding: 50px 0 20px;
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 400;
+  }
+  &__none {
+    font-size: 16px;
+    line-height: 25px;
+  }
+}
+.table {
+  &__messages {
+    width: 100%;
+    th,
+    td {
+      height: 25px;
+      font-weight: 400;
+    }
+    tr {
+      margin-bottom: 15px;
+    }
+  }
+  &__head {
+    border-bottom: 4px solid black;
+    border-radius: 5px;
+  }
+  &__head-item {
+    font-size: 16px;
+    text-align: left;
+    line-height: 25px;
+    font-weight: 400;
+    color: #c4c4c4;
+  }
+}
+.date,
+.status {
+  width: 100px;
+}
+.status,
+.message__status {
+  text-align: right;
+}
+.message {
+  width: 100%;
+  &__date,
+  &__status {
+    min-width: 100px;
+  }
+  td[data-value="Отправлено"] {
+    color: #03a100;
+  }
+  td[data-value="В очереди"] {
+    color: #c4c4c4;
+  }
+  td[data-value="Ошибка"] {
+    color: #ff6666;
+  }
+  &__sent {
+    position: relative;
+    width: 800px;
+    height: 320px;
+    margin-top: 90px;
+    background: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    &-inner {
+      position: absolute;
+      display: flex;
+      top: 50%;
+      transform: translateY(-50%);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    &-title {
+      font-size: 30px;
+      line-height: 40px;
+      font-weight: 300;
+    }
+    &-text {
+      text-align: center;
+      font-size: 16px;
+      line-height: 25px;
+    }
+  }
+}
